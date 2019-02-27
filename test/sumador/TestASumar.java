@@ -1,34 +1,70 @@
 package sumador;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import java.util.*;
 
 class TestASumar {
+	
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
+    
+    private String valor_inicial;
 
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
 
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-	}
-
+	/**
+     * testUnaCifra es un metodo setter que asigna un valor
+     */
 	@Test
-	void test() {
-		fail("No implementado aun");
+    public void testUnaCifra() {
+        int numero = 5;
+		ASumar sumi = new ASumar(numero);
+        String resultado = sumi.mostrar();
+        assertEquals(numero=numero,resultado );
+        
+    }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+   /**
+    * método setter que introduce los valores
+    * @param numero
+    * @param resultado
+    */
+	private void assertEquals(int numero, String resultado) {
+		// TODO Apéndice de método generado automáticamente
+		
 	}
+    
+	/**
+	 * CONSTRUCTOR DE ASumar al que se le pasa un parámetro String
+	 * @param string
+	 * @return 
+	 */
+    public void ASumar(String string) {
+        this.valor_inicial = string;
+    }
+	
+
+    
+    /**
+     * MÉTODO GETTER. devuelve una cadena de texto 
+     * que igual la entrada al valor
+     * Sólo si el tiene una cifra.
+     * @return
+     */
+    public String mostrar() {
+        String numero = valor_inicial;
+        if (numero.length() == 1) {
+            return (numero + " = " + numero);
+        }
+		return numero; 
+}
+	
 
 }
+
